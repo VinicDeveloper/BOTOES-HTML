@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- inicio css -->
+   <style>
+    .inscrever{
+        background-color: rgb(148, 9, 9);
+        color: white;
+        border: none;
+        border-radius: 2px;
+        height: 36px;
+        width: 107px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-right:10px;
+        transition: opacity 0.15s;
+
+    }
+    .membro{
+        background-color:blue;
+        color: white;
+        border-color: rgb(175, 163, 163);
+        border-style: solid;
+        border-radius: 3px;
+        height: 40px;
+        width: 80px;
+        cursor: pointer;
+        text-align: center;
+        margin-right:18px;
+    }
+    .seja-membro{
+        background-color:white;
+        color: blue;
+        border-color: rgb(8, 23, 225);
+        border-style: solid;
+        border-radius: 3px;
+        height: 40px;
+        width: 80px;
+        cursor: pointer;
+        text-align: center;
+        margin-right:18px;
+        transition: background-color 0.15s,color 0.15s;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .inscrever:hover{
+       opacity: 0.7;
+
+    }
+    .inscrever:active{
+      opacity: 0.3;
+    }
+    
+    
+    
+    .membro:hover{
+        background-color:white;
+        color: blue;
+    
+
+        
+    }
+    .seja-membro:hover{
+        background-color:blue;
+        color: white;
+        border-color: rgb(8, 23, 225); /*rgb(vermelho,verde,azul)*/ 
+        
+    /* como se fossem cores primarias o rgb,e como se fosse uma mistura de cores para formar uma,facilitando a identificação das mesmas */
+    }
+    .tweet:hover{
+        box-shadow: 2px 2px 12px rgba(0, 0 , 0, 0.5); /* box-shadow: vertical - horizontal - blur - cor;*/
+    }
+    /* rgba( vermelho, verde , azul , opacidade) */
+    .tweet:active{
+        background-color: rgb(24, 79, 173);
+    }
+    .tweet{
+        background-color:rgb(32, 106, 233);
+        color: white;
+        border-color: transparent;
+        border-radius: 20px;
+        height: 36px;
+        width: 80px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 15px;
+        transition:box-shadow 0.15s;
+        margin-top: 15px;
+    }
+    .inscrito{
+        background-color:rgb(221, 206, 206);
+        color:gray;
+        border: none;
+        border-radius: 2px;
+        height: 36px;
+        width: 107px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-right:10px;
+    }
+   </style>
+   <!-- fim css e inicio js-->
+   <script>
+    
+    function sub(){
+    const bs = document.querySelector('button#sub') // botão constante - pois ele não muda e nem e chamado de novo
+    bs.onclick = function(){ // função para verificar se o usuario está inscrito ou não
+       
+       if(bs.className == "inscrever"){ //se,não estiver inscrito quando o botão for clicado,inscreva-se
+        bs.className = "inscrito"
+        bs.innerHTML = `INSCRITO` 
+}
+
+else{ //senão volte ao padrão
+    //padrão
+    bs.className = "inscrever"
+    bs.innerHTML = `INSCREVA-SE`
+}
+}
+
+    }
+    
+    
+    
+function join(){
+const bj = document.querySelector('button#join')
+bj.onclick = function(){
+       
+       if(bj.className == "seja-membro"){
+        bj.className = "membro"
+        bj.innerHTML = `MEMBRO` 
+}
+
+else{
+   //padrão
+    bj.className = "seja-membro"
+    bj.innerHTML = `SEJA-MEMBRO!`
+}
+}       
+}
+    </script>
+<!-- fim do script -->
+</head>
+<body>
+   <section>
+    <button id="sub" class="inscrever" onclick="sub()">
+        INSCREVA-SE
+    </button>
+    <button id="join" class="seja-membro" onclick="join()">SEJA-MEMBRO!</button>
+    <button id="tw" class="tweet" onclick="tw()">Tweetar</button>
+</section>
+</body>
+</html>
